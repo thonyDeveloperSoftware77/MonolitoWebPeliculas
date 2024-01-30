@@ -2,26 +2,157 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+h1{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #fff;
+}
+/*/*Degradado negro a la izquierda*/
+.preview {
+  position: relative;
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/*/*Degradado negro a la izquierda*/
+.preview2 {
+  position: relative;
+  overflow: hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.preview img {
+  display: block;
+  width: 2000px;
+  height: 300px; /* Ajusta esto al tamaño que desees */
+  object-fit: cover; /* Esto asegura que la imagen cubra el área sin distorsionarse */
+}
+
+
+.preview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 600px;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  mix-blend-mode: multiply; /* Puede ajustarse según tus necesidades */
+  z-index: 1;
+  pointer-events: none;
+}
+/*PARA SIDEBAR*/
+
+
+
+.preview2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 110%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  mix-blend-mode: multiply; /* Puede ajustarse según tus necesidades */
+  z-index: 1;
+  pointer-events: none;
+}
+/*PARA SIDEBAR*/
+
+
+
+.SideBar {
+  background-color: #1E1E2F;
+  width: 17%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -10px;
+  transition: all 0.3s ease;
+  z-index: 100;
+  /*PARA GLASS*/
+  background-repeat: no-repeat;
+}
+
+
+.SideBarHidden {
+  background-color: #1E1E2F;
+  width: 15%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -10px;
+  transition: all 0.3s ease;
+  z-index: 100;
+  /*PARA GLASS*/
+  background-repeat: no-repeat;
+}
+
+
+
+
+.ContentSideBar {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.474);
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.Acordion span{
+  color: #fff;
+  font-weight: 500;
+  margin-left: 10px;
+
+}
+
+.userProfileContent{
+  
+}
+.ContentBox {
+  margin-left: 20%;
+  transition: all 0.3s ease;
+  width: 78%;
+}
+.ContentBoxAll{
+  margin-left: 15%;
+  transition: all 0.3s ease;
+  width: 85%;
+}
+
+.splineContainer{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+}
+
+.mainContainerTitle{
+  z-index: 1;
+}
+
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 200ms;
+}
+
+.background {
+  background-image: url('/spiderman.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
